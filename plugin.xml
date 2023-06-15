@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="cordova-plugin-moxo"
+      version="0.0.0-trunk">
+    <name>Moxtra</name>
+    <description>Moxtra Integration</description>
+    <license>MIT</license>
+    <keywords>moxtra, Integration, Chat, Meet</keywords>
+    <author>Gitesh</author>
+    <repo>https://github.com/Moxtra/phonegap-cordova-ios-moxtrablr</repo>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/moxtra.js" name="Moxtra">
+        <clobbers target="Moxtra" />
+    </js-module>
+    <js-module src="www/helper.js" name="Helper">
+        <runs/>
+    </js-module>
+    <dependency id="cordova-plugin-add-swift-support" version="2.0.2" />
+    <!-- android -->
+    <platform name="android">
+        <hook type="after_plugin_install" src="scripts/android/after_plugin_install.js" />
+        <hook type="before_plugin_uninstall" src="scripts/android/before_plugin_uninstall.js" />
+        <hook type="before_compile" src="scripts/android/before_compile.js" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Moxtra" >
+                <param name="android-package" value="com.moxtra.mepplugin.MoxtraPlugin"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+            android:name="com.moxtra.mepsdk.overview.OverviewActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.binder.ui.pageview.PagerActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.binder.ui.util.MXAlertDialog"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.binder.ui.util.MXProxyAuthorizationDialog"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.binder.ui.meet.ring.MeetRingActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.mepsdk.chat.DuplicateConversationActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+
+            <activity
+            android:name="com.moxtra.mepsdk.internal.landing.MainActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.internal.landing.CreateChatActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+
+            <activity
+            android:name="com.moxtra.mepsdk.internal.dashboard.DashboardActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+
+            <activity
+            android:name="com.moxtra.mepsdk.domain.OpenChatSetting$ChatSettingActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+
+            <activity
+            android:name="com.moxtra.binder.ui.meet.LiveMeetActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+
+            <activity
+            android:name="com.moxtra.mepsdk.invitation.InviteActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            
+            <activity
+            android:name="com.moxtra.mepsdk.profile.presence.EditPresenceActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.transaction.TransactionListActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.share.SelectChatActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.calendar.TimeZoneActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.social.CreateSocialChannelActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.subscription.SubscriptionsActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.subscription.GeneralFeedDetailActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.support.SupportActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.common.DataUpgradingActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.account.MultiMeetRingActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.binder.ui.common.ExitActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep" />
+            <activity
+            android:name="com.moxtra.binder.ui.common.MXStackActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.binder.ui.common.BlankContainerActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+             android:name="com.moxtra.mepsdk.domain.OpenChat$ChatActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+            <activity
+            android:name="com.moxtra.mepsdk.sr.SRListActivity"
+            android:autoRemoveFromRecents="true"
+            android:taskAffinity=".mep"/>
+        </config-file> 
+
+        <source-file src="src/android/com/moxtra/mepplugin/MoxtraPlugin.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/com/moxtra/mepplugin/PluginLayout.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/com/moxtra/mepplugin/FragmentPluginView.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/com/moxtra/mepplugin/IPluginView.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/com/moxtra/mepplugin/PluginUtil.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/com/moxtra/mepplugin/ErrorCodeUtil.java"  target-dir="src/com/moxtra/mepplugin"/>
+        <source-file src="src/android/ids.xml" target-dir="res/values"/>
+        <framework src="src/android/moxtrabuild1.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/moxtrabuild2.gradle" custom="true" type="gradleReference" />
+    </platform>
+    
+
+    
+    <platform name="ios">
+        <hook type="before_plugin_install" src="scripts/ios/before_plugin_install.js" />
+        <config-file target="config.xml" parent="/*">
+          <feature name="Moxtra">
+            <param name="ios-package" value="MoxtraIntegration"/>
+          </feature>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>The app wants to access your photos.</string>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>The app wants to access your camera.</string>
+        </config-file>
+            
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>The app wants to access your microphone.</string>
+        </config-file>
+            
+        <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
+            <string>The app wants to access your calendar.</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSLocationUsageDescription">
+            <string>The app wants to access your location.</string>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+            <string>The app wants to access your photos.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSContactsUsageDescription">
+            <string>The app wants to access your contacts.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSBluetoothAlwaysUsageDescription">
+            <string>The app wants to use your bluetooth.</string>
+        </config-file>
+        
+            
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>audio</string>
+                <string>voip</string>
+            </array>
+        </config-file>
+        <config-file target="*-Info.plist" parent="CFBundleLocalizations">
+            <array>
+                <string>en</string>
+                <string>zh_Hans</string>
+                <string>zh_Hant</string>
+            </array>
+        </config-file>
+        
+        <!-- MOXTRA -->
+        <podspec>
+          <config>
+            <source url="https://maven.moxtra.com/repo/moxtra-specs.git" />
+          </config>
+          <pods use-frameworks="false">
+              <pod name="MEPSDK" spec="~> 7.16.3"/>
+          </pods>
+        </podspec>
+
+        <header-file src="src/ios/MoxtraIntegration.h" />
+        <header-file src="src/ios/Moxo-Bridging-Header.h"/>
+        <source-file src="src/ios/Void.swift"/>
+        <source-file src="src/ios/MoxtraIntegration.m" />
+        <header-file src="src/ios/MoxtraOverlayWindow.h" />
+        <source-file src="src/ios/MoxtraOverlayWindow.m" />
+        <header-file src="src/ios/MXDelegateMapper.h" />
+        <source-file src="src/ios/MXDelegateMapper.m" />
+        <header-file src="src/ios/MoxtraAspects.h" />
+        <source-file src="src/ios/MoxtraAspects.m" />
+        
+        <framework src="libxml2.2.tbd" />
+        <framework src="libc++.tbd" />
+        <framework src="libz.tbd" />
+    </platform>
+</plugin>

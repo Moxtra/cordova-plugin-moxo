@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-moxo-tests",
+  "version": "6.16.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-moxo-tests",
+    "platforms": [
+        "android",
+        "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "John",
+  "license": "Apache 2.0"
+}

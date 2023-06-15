@@ -1,0 +1,14 @@
+android {
+    packagingOptions {
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.properties'
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.xml'
+    } 
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation ('org.apache.commons:commons-lang3:3.6')
+    implementation ('com.moxtra:mep-sdk:8.9.2') {
+        changing = true
+    }
+}

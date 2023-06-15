@@ -1,0 +1,35 @@
+{
+  "name": "@moxtradeveloper/cordova-plugin-moxo",
+  "version": "0.0.0-trunk",
+  "description": "Plugin for adding Moxtra services to Cordova/PhoneGap Apps.",
+  "cordova": {
+    "id": "@moxtradeveloper/cordova-plugin-moxo",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "moxtra",
+    "moxo",
+    "mep",
+    "chat",
+    "meet",
+    "flow",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "john.hu <john.hu@moxo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://www.moxtra.com"
+  },
+  "homepage": "https://www.moxtra.com"
+}
