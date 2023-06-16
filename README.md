@@ -242,4 +242,4 @@ To do more, you can invoke function `openChat(chat_id)` to open target chat dire
 ```
 
 ## API Doc
-[API doc](https://htmlpreview.github.io/?https://github.com/Moxtra/react-native-moxo-module/blob/main/docs/index.html)
+[API doc](https://htmlpreview.github.io/?https://github.com/Moxtra/cordova-plugin-moxo/blob/main/docs/moxtra.html)
