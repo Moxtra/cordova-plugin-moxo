@@ -1,6 +1,6 @@
 {
   "name": "@moxtradeveloper/cordova-plugin-moxo",
-  "version": "0.0.0-trunk",
+  "version": "8.12.2",
   "description": "Plugin for adding Moxtra services to Cordova/PhoneGap Apps.",
   "cordova": {
     "id": "@moxtradeveloper/cordova-plugin-moxo",
@@ -29,7 +29,7 @@
   "author": "john.hu <john.hu@moxo.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://www.moxtra.com"
+    "url": "https://github.com/Moxtra/cordova-plugin-moxo/issues"
   },
-  "homepage": "https://www.moxtra.com"
+  "homepage": "https://github.com/Moxtra/cordova-plugin-moxo"
 }
