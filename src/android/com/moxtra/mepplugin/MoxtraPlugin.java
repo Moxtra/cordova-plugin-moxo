@@ -22,8 +22,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.moxtra.binder.ui.common.BlankContainerActivity;
-import com.moxtra.binder.ui.common.Navigator;
 import com.moxtra.mepsdk.ErrorCodes;
 import com.moxtra.mepsdk.FeatureConfig;
 import com.moxtra.mepsdk.MEPClient;
@@ -129,7 +127,6 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
         mUnreadCountMap = new HashMap<>();
         //MEP Feature config
         FeatureConfig.hideFABOnTimeline(true);
-        Navigator.putActivity(Navigator.BLANK_STACK_ACTIVITY, BlankContainerActivity.class);
     }
 
     public MoxtraPlugin() {
