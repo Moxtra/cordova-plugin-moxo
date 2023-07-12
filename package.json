@@ -27,7 +27,7 @@
     }
   ],
   "author": "john.hu <john.hu@moxo.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Moxtra/cordova-plugin-moxo/issues"
   },
