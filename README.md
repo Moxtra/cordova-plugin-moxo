@@ -25,7 +25,7 @@ Below sdk or tools are required before start to use cordova-plugin-moxo
 
 ### iOS
 
-* Xcode v14.1+
+* Xcode v15+
 * Cocoapod v1.11.0+
 
 For more cordova set up details, please ref to [cordova official site](https://cordova.apache.org/#getstarted)
@@ -242,4 +242,5 @@ To do more, you can invoke function `openChat(chat_id)` to open target chat dire
 ```
 
 ## API Doc
+
 [API doc](https://htmlpreview.github.io/?https://github.com/Moxtra/cordova-plugin-moxo/blob/main/docs/moxtra.html)
