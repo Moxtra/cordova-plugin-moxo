@@ -25,7 +25,7 @@ Below sdk or tools are required before start to use cordova-plugin-moxo
 
 ### iOS
 
-* Xcode v15.0+
+* Xcode v15+
 * Cocoapod v1.11.0+
 
 For more cordova set up details, please ref to [cordova official site](https://cordova.apache.org/#getstarted)
