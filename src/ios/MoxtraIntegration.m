@@ -161,6 +161,7 @@ const NSMutableDictionary *delegateMap;
     NSDictionary* settings = self.commandDelegate.settings;
     if ([settings cordovaBoolSettingForKey:@"SupportMoxoDivAPI" defaultValue:YES]) {
         self.webView.backgroundColor = [UIColor clearColor];
+        self.webView.scrollView.backgroundColor = [UIColor clearColor];
         self.webView.opaque = NO;
         [self.webView removeFromSuperview];
 
