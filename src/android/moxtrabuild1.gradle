@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+	mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.0'
@@ -15,10 +15,10 @@ buildscript {
 allprojects {
     repositories {
         google()
+	mavenCentral()
         maven() {
             url "https://maven.moxtra.com/nexus/content/groups/mep_public/"
         }
-        jcenter()
         maven { url "https://jitpack.io" }
     }
     
