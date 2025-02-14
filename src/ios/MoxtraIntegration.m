@@ -24,6 +24,8 @@ const static NSString *meetEndDateKey = @"end_time";
 const static NSString *joinMeetAnonymouslyDisplayNameKey = @"display_name";
 const static NSString *joinMeetAnonymouslyEmailKey = @"email";
 const static NSString *joinMeetAnonymouslyPasswordKey = @"password";
+const static NSString *openLiveChatChannelKey = @"channel_id";
+const static NSString *openLiveChatMessageKey = @"message";
 
 const static NSString *voiceMessageConfigKey = @"voice_message_enabled";
 
@@ -665,8 +667,14 @@ const NSMutableDictionary *delegateMap;
     }
     
     [MEPClient sharedInstance].delegate = self;
-    
-    [[MEPClient sharedInstance] openLiveChatWithCompletion:^(NSError * _Nullable error) {
+    NSNumber *channelId = nil;
+    NSString *message = nil;
+    if (command.arguments.count && [command.arguments.firstObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *option = (NSDictionary *)command.arguments.firstObject;
+        channelId = (NSNumber *)[option objectForKey:openLiveChatChannelKey];
+        message = [option objectForKey:openLiveChatMessageKey];
+    }
+    void (^openLiveChatHandler)(NSError *error) = ^void(NSError *error) {
         CDVPluginResult *pluginResult = nil;
         if (!error)
         {
@@ -676,7 +684,13 @@ const NSMutableDictionary *delegateMap;
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[self universalErrorFromMEP:error]];
         }
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId ];
-    }];
+    };
+    
+    if (channelId) {
+        [[MEPClient sharedInstance] openLiveChatWithChannelId:[channelId integerValue] message:message completion:openLiveChatHandler];
+    } else {
+        [[MEPClient sharedInstance] openLiveChatWithCompletion:openLiveChatHandler];
+    }
 }
 
 - (void)openServiceRequest:(CDVInvokedUrlCommand*)command

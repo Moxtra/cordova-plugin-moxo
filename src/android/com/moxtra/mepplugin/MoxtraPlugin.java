@@ -1489,10 +1489,20 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
     private void openLiveChat(JSONArray args, CallbackContext callbackContext) {
         Log.d(TAG, "openLiveChat with args:" + args);
         JSONObject options = null;
+        String channelId = null;
+        String message = null;
         try {
             options = convertArgument2JSONObject(args.getString(0));
+            if (options != null) {
+                if (options.has("channel_id")) {
+                    channelId = options.getString("channel_id");
+                }
+                if (options.has("message")) {
+                    message = options.getString("message");
+                }
+            }
 
-            MEPClient.openLiveChat(new ApiCallback<Void>() {
+            ApiCallback<Void> callback = new ApiCallback<Void>() {
                 @Override
                 public void onCompleted(Void result) {
                     Log.d(TAG, "openLiveChat success~");
@@ -1506,8 +1516,13 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
                     sendPluginResult(callbackContext, PluginResult.Status.ERROR,
                             new JSONObject(getErrorInfo(errorCode, errorMsg)));
                 }
-            });
-        } catch (JSONException e) {
+            };
+            if(channelId == null || channelId.isEmpty()) {
+                MEPClient.openLiveChat(callback);
+            } else {
+                MEPClient.openLiveChat(Long.parseLong(channelId), message, callback);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
             sendPluginResult(callbackContext, PluginResult.Status.ERROR,
                     new JSONObject(getErrorInfo(-1, e.getMessage())));

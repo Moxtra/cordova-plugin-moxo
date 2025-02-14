@@ -202,7 +202,13 @@ var moxtra = {
     /** 
      * Show client live chat page 
      * Note: This function only works for client user since internal user doesn't have live chat.
-     * @param {options}  reserved     - Reserved parameter, you could pass null for now.
+     * @param {options}  Pass parameters for open live chat with channel id and message     - Options to open live chat, if pass null, show live page only, and if pass
+     * {
+     *      "channel_id": "value of channel id",  
+     *      "message": "value of message"  //Optional
+     * }
+     * then will open live chat with channel id and message.
+     * 
      * @param {function} success      - Callback invoked when show succeed
      * @param {function} failure      - Callback invoked when show failed, with parameter like below:
      * {
