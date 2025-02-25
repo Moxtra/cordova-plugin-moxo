@@ -8,7 +8,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation ('org.apache.commons:commons-lang3:3.6')
-    implementation ('com.moxtra:mep-sdk:9.9.5') {
+    implementation ('com.moxtra:mep-sdk:9.9.6') {
         changing = true
     }
 }
