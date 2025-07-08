@@ -717,6 +717,29 @@ const NSMutableDictionary *delegateMap;
     }];
 }
 
+- (void)openInboxWorkspace:(CDVInvokedUrlCommand*)command {
+    if (![NSThread isMainThread])
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self openInboxWorkspace:command];
+        });
+    }
+    
+    [MEPClient sharedInstance].delegate = self;
+    
+    [[MEPClient sharedInstance] openInboxWorkspaceWithCompletion:^(NSError * _Nullable error) {
+        CDVPluginResult *pluginResult = nil;
+        if (!error)
+        {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        }
+        else{
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[self universalErrorFromMEP:error]];
+        }
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId ];
+    }];
+}
+
 
 - (void)joinMeet:(CDVInvokedUrlCommand *)command {
     if (![NSThread isMainThread])

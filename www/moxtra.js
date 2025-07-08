@@ -234,6 +234,19 @@ var moxtra = {
         cordova.exec(success, failure, pluginName, 'openServiceRequest', []); 
     },
 
+    /** 
+     * Show inbox workspace page 
+     * @param {function} success      - Callback invoked when show succeed
+     * @param {function} failure      - Callback invoked when show failed, with parameter like below:
+     * {
+     *      "error_code":4  //error code 
+     *      "error_message": 'no network' //Detail error message
+     * }
+     */ 
+    openInboxWorkspace: function(success, failure) {
+        cordova.exec(success, failure, pluginName, 'openInboxWorkspace', []); 
+    },
+
     /**
      * Start a meet with specific topic and members. Meeting screen will show up once meeting started succeed
      *
@@ -554,9 +567,9 @@ var moxtra = {
      * Listen current user's unread messages per type.
      * @param {object}   options     - Additional options when get unread count message. Supported key-values list below:
      * {
-     *      "type": 5   //Which type of chat you intend to filter, 5 represents live chat, 6 represents service request.
+     *      "type": 5   //Which type of chat you intend to filter, 5 represents live chat, 6 represents service request and 8 represents inbox workspace.
      * }
-     * @note This API only supports type 5(live chat) or type 6(service request) yet
+     * @note This API only supports type 5(live chat) or type 6(service request) or type 8(inbox workspace) yet
      * @param {function} success      - Callback invoked when get succeed, with an integer parameter which represents corresponding unread messages count
      * @param {function} failure      - Callback invoked when get failed, with parameter like below:
      * {

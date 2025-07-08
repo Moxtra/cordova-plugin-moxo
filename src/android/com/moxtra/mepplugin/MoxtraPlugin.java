@@ -218,6 +218,8 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
                 showServiceRequestInDiv(args, callbackContext);
             } else if (action.equals("showLiveChatInDiv")) {
                 showLiveChatInDiv(args, callbackContext);
+            } else if (action.equals("openInboxWorkspace")) {
+                openInboxWorkspace(args, callbackContext);
             } else {
                 return false;
             }
@@ -859,6 +861,8 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
                 chatType = MEPChat.MEPChatType.LiveChat;
             } else if (type == 6) {
                 chatType = MEPChat.MEPChatType.ServiceRequest;
+            } else if (type == 8) {
+                chatType = MEPChat.MEPChatType.Inbox;
             } else {
                 sendPluginResult(callbackContext, PluginResult.Status.ERROR,
                         new JSONObject(getErrorInfo(-1, String.format("type %d is not supported yet.", type))));
@@ -1542,6 +1546,25 @@ public class MoxtraPlugin extends CordovaPlugin implements ViewTreeObserver.OnSc
             @Override
             public void onError(int errorCode, String errorMsg) {
                 Log.d(TAG, "openServiceRequest failed with errorCode:" + errorCode + ", errorMessage:" + errorMsg);
+                sendPluginResult(callbackContext, PluginResult.Status.ERROR,
+                        new JSONObject(getErrorInfo(errorCode, errorMsg)));
+            }
+        });
+    }
+
+    private void openInboxWorkspace(JSONArray args, CallbackContext callbackContext) {
+        Log.d(TAG, "openInboxWorkspace ...");
+        MEPClient.openInboxWorkspace(new ApiCallback<Void>() {
+            @Override
+            public void onCompleted(Void result) {
+                Log.d(TAG, "openInboxWorkspace success~");
+                sendPluginResult(callbackContext, PluginResult.Status.OK,
+                        null);
+            }
+
+            @Override
+            public void onError(int errorCode, String errorMsg) {
+                Log.d(TAG, "openInboxWorkspace failed with errorCode:" + errorCode + ", errorMessage:" + errorMsg);
                 sendPluginResult(callbackContext, PluginResult.Status.ERROR,
                         new JSONObject(getErrorInfo(errorCode, errorMsg)));
             }
