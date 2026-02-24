@@ -1,6 +1,6 @@
 {
   "name": "@moxtradeveloper/cordova-plugin-moxo",
-  "version": "10.5.2",
+  "version": "10.5.6",
   "description": "Plugin for adding Moxtra services to Cordova/PhoneGap Apps.",
   "cordova": {
     "id": "@moxtradeveloper/cordova-plugin-moxo",

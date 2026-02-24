@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="cordova-plugin-moxo"
-      version="10.5.2">
+      version="10.5.6">
     <name>Moxtra</name>
     <description>Moxtra Integration</description>
     <license>MIT</license>
@@ -219,11 +219,8 @@
         
         <!-- MOXTRA -->
         <podspec>
-          <config>
-            <source url="https://maven.moxtra.com/repo/moxtra-specs.git" />
-          </config>
           <pods use-frameworks="false">
-              <pod name="MEPSDKDylib" spec="~> 10.5.2"/>
+              <pod name="MEPSDKDylib" podspec="https://raw.githubusercontent.com/Moxtra/moxo-ios-mepsdk/10.5.6/MEPSDKDylib.podspec"/>
           </pods>
         </podspec>
 
