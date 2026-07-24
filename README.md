@@ -8,25 +8,26 @@
 
 ### Supported Platforms
 
-* iOS 13.0+
-* Android 4.4+
+* iOS 15.0+
+* Android 7.0+
 
 ## Preparation
 
 Below sdk or tools are required before start to use cordova-plugin-moxo
 
-* Node.js v14+
+* Node.js v22+
 * Cordova v10.0.0+
 
 ### Android
 
 * Android Studio
-* Android SDK v19+
+* Android SDK v24+
 
 ### iOS
 
-* Xcode v15+
-* Cocoapod v1.11.0+
+* Xcode v16+
+* Swift 5.0
+* Cocoapod v1.16.2+
 
 For more cordova set up details, please ref to [cordova official site](https://cordova.apache.org/#getstarted)
 
