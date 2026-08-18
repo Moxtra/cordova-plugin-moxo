@@ -6,7 +6,7 @@ Moxo is an AI workflow automation platform for business operations.
 
 ## Introduce
 
-**cordova-plugin-moxo** is a [moxo sdk](https://www.moxo.com/platform/sdks) cordova wrapper. Provide Moxo OneStop capabilities to your mobile app built on [Cordova](https://cordova.apache.org/)
+**cordova-plugin-moxo** is a [moxo sdk](https://www.moxo.com/platform/sdks) cordova wrapper. Provide Moxo capabilities to your mobile app built on [Cordova](https://cordova.apache.org/)
 
 ### Supported Platforms
 
