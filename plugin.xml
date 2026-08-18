@@ -5,7 +5,7 @@
     <name>Moxtra</name>
     <description>Moxo Integration</description>
     <license>MIT</license>
-    <keywords>moxo, moxtra, mep, cordova, plugin, chat, meet, meeting, video, collaboration, messaging, sdk</keywords>
+    <keywords>moxo, mep, cordova, plugin, chat, meet, meeting, video, collaboration, messaging, sdk</keywords>
     <author>Moxo</author>
     <repo>https://github.com/Moxtra/cordova-plugin-moxo</repo>
 
