@@ -126,7 +126,7 @@ To enable notification feature, you'll need to integrate a notification plugin f
 
 Through **cordova-plugin-firebase-messaging** `requestPermission()`, post user agreement, notification will be enabled for your app.
 And when notification registration done, device token can be get from the callback of `getToken()`.
-Then pass `token` to moxo function `window.Moxtra.registerNotification()` will register notification service to Moxtra server.
+Then pass `token` to moxo function `window.Moxtra.registerNotification()` will register notification service to Moxo server.
 
 ```js
 window.cordova.plugins.firebase.messaging.requestPermission().then(function() {
@@ -172,7 +172,7 @@ window.cordova.plugins.firebase.messaging.onMessage(function(payload) {
 })
 ```
 
-If is a Moxtra notification, then success callback of the ``parseRemoteNotification()`` would be triggered with info parameter. Usually info contains ``'chat_id'`` or ``'meet_id'``, depends one which kind of notification you received.
+If is a Moxo notification, then success callback of the ``parseRemoteNotification()`` would be triggered with info parameter. Usually info contains ``'chat_id'`` or ``'meet_id'``, depends one which kind of notification you received.
 
 To do more, you can invoke function `openChat(chat_id)` to open target chat directly.
 
